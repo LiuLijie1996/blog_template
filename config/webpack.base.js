@@ -38,7 +38,7 @@ function createFile(){
 }
 
 module.exports = {
-    devtool: "source-map",
+    devtool: "inline-source-map",
 
     // 入口文件
     entry: entry,
@@ -47,6 +47,10 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "../build"), //输出地址
         filename: "dist/js/[name].js", //输出后的文件名
+    },
+
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js']
     },
 
     // loader

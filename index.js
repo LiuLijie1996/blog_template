@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const app = express();
+const axios = require("axios");
+const bodyParser = require("body-parser");
 let fileLog = require("./fileLog.json") || [];
 
 /*-------webpack--------*/
@@ -11,6 +13,11 @@ const config = require("./config/webpack.dev.js");//导入webpack的配置
 const compiler = webpack(config);//将配置传入webpack中,返回编译器
 app.use(middleware(compiler));//使用中间件, 将编译器放入middleware中进行解析
 /*-------END--------*/
+
+
+//解析前端发送的post请求
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());//如果前端通过axios发送的数据，这段必须写
 
 // 开放静态目录
 app.use(express.static("./static"));
@@ -97,3 +104,23 @@ function writeDeleteInfo(filename) {
     //写入内容
     fs.writeFileSync(fileLogPath, JSON.stringify(fileLog));
 }
+
+
+app.all('/api/*', function (req, res) {
+    let url = req.url.split("/api")[1];
+
+    let options = {
+        url: "http://localhost:3000" + url,
+        method: "post",
+        data: req.body,
+    };
+
+    axios.post(options.url, req.body).then(result => {
+        res.send(result.data);
+    }).catch(err => {
+        res.send({
+            code: 0,
+            msg: "请求失败"
+        })
+    })
+});
