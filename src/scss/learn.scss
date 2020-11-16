@@ -1,0 +1,43 @@
+@import "./commont.scss";
+@import "./articleList.scss";
+@import "./mainContentSide.scss";
+@import "./header.scss";
+@import "./footer.scss";
+
+.navBox{
+  width: 1200px;
+  margin: auto;
+
+  /*面包屑导航*/
+  .breadcrumb{}
+  // 头部导航
+  .two-nav-wrap-box {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    a {
+      padding: 0 50px;
+      color: #fff;
+      text-align: center;
+      background-color: $background-color2;
+      border-radius: 5px;
+    }
+  }
+}
+
+
+.main-content {
+  //文章容器
+  .article-wrap-box {
+    float: left;
+    width: 860px;
+    margin-top: 30px;
+  }
+
+  /*网站侧面*/
+  .main-content-side {
+    margin-top: 30px;
+  }
+}
+

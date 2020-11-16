@@ -1,0 +1,78 @@
+@import "../asset/iconfont/iconfont.css";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+// layui主题色
+.layui-nav .layui-this:after,
+.layui-nav-bar,
+.layui-nav-tree .layui-nav-itemed:after {
+    background-color: #ef4868;
+}
+.layui-tab-brief>.layui-tab-title .layui-this {
+    color: #ef4868;
+}
+.layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #ef4868;
+}
+
+// 页面内容
+#PageContents {
+    width: 100%;
+    padding-top: 110px;
+
+    /*主要内容*/
+    .main-content {
+        width: 1200px;
+        margin: auto;
+        transition: 0.5s;
+        transform: translateY(200%);
+    }
+
+    /*清除高度塌陷*/
+    .main-content:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+// 主题颜色
+$theme-color1: #ef4868;
+$theme-color2: #f7b0b0;
+
+//背景颜色
+$background-color1:#f7f7f7;
+$background-color2:#868584;
+
+// 文字颜色
+$font-color1: #333;
+$font-color2: #666;
+$font-color3: #3d3d3d;
+$font-color4: #919898;
+$font-color5: #696971;
+$font-color6: #d32;
+$font-color7: #ac5a24;
+
+//边框颜色
+$border-color1: #ccc;
+$border-color2: #cecece;
+
+// 边框阴影
+$border-shadow1:0 2px 20px 0 rgba(0, 0, 0, .17);
+
+//过渡时间
+$transition1:0.2s;
+$transition2:0.5s;
+$transition3:1s;

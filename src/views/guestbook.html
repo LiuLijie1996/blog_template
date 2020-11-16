@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script src="/layui/layui.js"></script>
+    <title>留言板</title>
+</head>
+
+<body>
+<!-- 头部组件 -->
+<div id="header">
+    <div class="box">
+        <!-- logo -->
+        <div class="logo">
+            <img src="../asset/images/logo.png" alt="">
+        </div>
+
+        <!-- 导航 -->
+        <div class="midNavList">
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item layui-this">
+                    <a href="javascript:;">首页</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">学无止境</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">个人日记</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">关于我</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">留言板</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 右侧显示登录或用户名组件 -->
+        <div class="LoginIsUser">
+            <!-- 登录 -->
+            <div class="login">
+                    <span class="layui-breadcrumb">
+                        <a href="javascript:;">登录</a>
+                        <a href="javascript:;">注册</a>
+                    </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--页面内容-->
+<div id="PageContents">
+    <!--导航-->
+    <div class="navBox">
+        <!--面包屑导航-->
+        <div class="breadcrumb">
+            <span class="layui-breadcrumb">
+              <a href="javascript:;">首页</a>
+              <a><cite>留言板</cite></a>
+            </span>
+        </div>
+    </div>
+
+    <!--主要内容-->
+    <div class="main-content">
+        <!--评论框-->
+    </div>
+
+    <div id="test"></div>
+    <div id="div-emoji">
+        <p>
+            <input id="input" type="text">
+        </p>
+        <p>
+            <button id="send">发送</button>
+            <button id="btn">emojiBtn</button>
+        </p>
+    </div>
+</div>
+
+<!-- 页面底部 -->
+<div id="footer">
+    <span class="design">Design by：利节</span>
+    <span class="icp">备案号：湘ICP备14011335号-2</span>
+</div>
+</body>
+
+</html>

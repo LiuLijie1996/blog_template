@@ -1,0 +1,57 @@
+@import "./commont.scss";
+
+#header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: $border-shadow1;
+    z-index: 999;
+    .box {
+        width: 1200px;
+        height: 80px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        // logo
+        .logo {
+            width: 120px;
+            height: 100%;
+            line-height: 80px;
+            img {
+                width: 100%;
+            }
+        }
+        // 导航
+        .midNavList {
+            width: 960px;
+            height: 100%;
+            .layui-nav {
+                background-color: #fff;
+                color: $font-color1;
+                .layui-nav-item {
+                    line-height: 80px;
+                    a {
+                        color: $font-color1;
+                    }
+                }
+            }
+        }
+        // 右侧显示登录或用户名组件
+        .LoginIsUser {
+            height: 100%;
+            line-height: 80px;
+            a {
+                color: $font-color1 !important;
+            }
+            a:hover {
+                color: $theme-color1 !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:750px) {}

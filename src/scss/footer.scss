@@ -1,0 +1,19 @@
+@import "./commont.scss";
+
+#footer{
+  margin-top: 20px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  text-align: center;
+  color: $font-color3;
+
+  .design{
+
+  }
+  .icp{
+    margin-left: 5px;
+    font-weight: bold;
+  }
+}

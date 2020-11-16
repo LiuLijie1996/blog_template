@@ -1,0 +1,298 @@
+@import "./commont.scss";
+@import "./articleList.scss";
+@import "./mainContentSide.scss";
+@import "./header.scss";
+@import "./footer.scss";
+
+// 展览（轮播，每日一语）
+.exhibition {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    height: 325px;
+    margin: auto;
+    transition: $transition3;
+    transform: translateY(-200%);
+
+    // 轮播
+    .banner {
+        width: 750px;
+        height: 325px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    // 每日一语
+    .dayWord {
+        position: relative;
+        width: 430px;
+        height: 325px;
+        background-image: url("../asset/images/say-bg.3808a5f.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        .word {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin: auto;
+            width: 230px;
+            transform: translateY(-50%);
+            color: $theme-color2;
+            font-size: 16px;
+            padding-left: 50px;
+        }
+    }
+}
+
+// 热门推荐
+.recommend {
+    width: 1200px;
+    height: 300px;
+    margin: 30px auto 0;
+    overflow: hidden;
+    transition: $transition2;
+    transform: translateY(200%);
+    // 标题
+    .recTitle {
+        display: flex;
+        justify-content: space-between;
+        line-height: 30px;
+
+        .tit {
+            font-size: 16px;
+            padding-left: 10px;
+            border-left: 3px solid $theme-color1;
+        }
+
+        .sellInfo {
+            a {
+                color: $theme-color1;
+                font-size: 16px;
+            }
+        }
+    }
+
+    /*推荐内容*/
+    .recommendContent {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 260px;
+        margin-top: 10px;
+
+        /*头条*/
+        .hot-module-side {
+            width: 310px;
+            height: 100%;
+            background-color: #fff;
+
+            /*文章主图*/
+            .articlePic {
+                width: 100%;
+                height: 180px;
+                padding: 10px;
+                box-sizing: border-box;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.8;
+                    transition: $transition1;
+                }
+
+                img:hover {
+                    opacity: 1;
+                }
+            }
+
+            /*文章短标题*/
+            .articleTitle {
+                font-size: 16px;
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+
+            /*文章副标题*/
+            .subTitle {
+                padding: 0 10px;
+                box-sizing: border-box;
+                margin-top: 10px;
+                font-size: 13px;
+                color: $font-color2;
+
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
+            }
+        }
+
+        /*推荐专栏*/
+        .column-list-box {
+            width: 880px;
+            height: 100%;
+            background-color: #fff;
+
+            /*tab选择栏*/
+            .layui-tab {
+                margin: 0;
+
+                .layui-tab-content {
+                    position: relative;
+                    height: 219px !important;
+                    box-sizing: border-box;
+
+                    .layui-tab-item {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        display: block;
+                        transition: $transition2;
+                        opacity: 0;
+                        z-index: 0;
+                        padding: 10px;
+                        box-sizing: border-box;
+
+                        /*左侧图片列表*/
+                        .left-img-list {
+                            float: left;
+                            width: 200px;
+                            height: 100%;
+
+
+                            .article-pic:hover img {
+                                transform: scale(1.1);
+                            }
+
+                            .article-pic {
+                                position: relative;
+                                width: 100%;
+                                height: 95px;
+                                border-radius: 5px;
+                                overflow: hidden;
+                                margin-bottom: 10px;
+                                cursor: pointer;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    transition: $transition1;
+                                }
+
+                                .article-title {
+                                    position: absolute;
+                                    left: 0;
+                                    right: 0;
+                                    top: 50%;
+                                    text-align: center;
+                                    transform: translateY(-50%);
+                                    color: #fff;
+                                    background-color: rgba(0, 0, 0, .3);
+                                    font-size: 13px;
+                                    padding: 10px 0;
+                                }
+                            }
+
+                            .article-pic:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        /*右侧文章列表*/
+                        .right-article-list {
+                            float: left;
+                            width: 650px;
+                            margin-left: 10px;
+                            background-color: #fff;
+                            cursor: pointer;
+
+                            .article-item {
+                                padding: 5px;
+                                box-sizing: border-box;
+
+                                .article-title {
+                                    .layui-badge {
+                                        height: 16px;
+                                        line-height: 16px;
+                                    }
+
+                                    .tit {
+                                        font-size: 15px;
+                                        font-weight: 400;
+                                    }
+
+                                    span {
+                                        vertical-align: middle;
+                                    }
+                                }
+
+                                /*副标题*/
+                                .article-sub-title {
+                                    font-size: 13px;
+                                    color: $font-color2;
+                                    height: 0;
+                                    transition: $transition1;
+
+                                    overflow: hidden;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 2;
+                                    -webkit-box-orient: vertical;
+                                    word-break: break-all;
+                                }
+                            }
+
+                            .hover-this {
+                                background-color: $background-color1;
+                                /*副标题*/
+                                .article-sub-title {
+                                    height: 36px;
+                                    margin-top: 10px;
+                                }
+                            }
+                        }
+                    }
+
+                    .layui-show {
+                        opacity: 1;
+                        z-index: 999;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//主页内容
+.main-content{
+    margin-top: 30px !important;
+
+    /*文章推荐*/
+    .article-recommend {
+        float: left;
+        width: 860px;
+
+        // 文章推荐头部标题
+        .artTitle {
+            line-height: 30px;
+
+            .tit {
+                font-size: 16px;
+                padding-left: 10px;
+                border-left: 3px solid $theme-color1;
+            }
+        }
+
+        /*文章容器*/
+        .article-wrap-box {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+}

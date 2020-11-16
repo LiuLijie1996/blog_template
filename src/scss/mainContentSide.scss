@@ -1,0 +1,224 @@
+@import "./commont.scss";
+
+/*页面侧面*/
+.main-content-side {
+  float: left;
+  width: 290px;
+  margin-left: 50px;
+  // 侧面头部标题
+  .sideTitle {
+    line-height: 30px;
+
+    .tit {
+      font-size: 16px;
+      padding-left: 10px;
+      border-left: 3px solid $theme-color1;
+    }
+  }
+
+  /*侧面搜索框*/
+  .search-wrap {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+
+    .input-box {
+      position: relative;
+      border: 1px solid $border-color1;
+      border-radius: 2px;
+
+      input {
+        width: 90%;
+        border: 0;
+      }
+
+      i {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+      }
+    }
+  }
+
+  /*侧面导航*/
+  .side-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 15px 15px 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    overflow: hidden;
+    margin-top: 15px;
+    border-radius: 5px;
+
+    .nav-item {
+      width: 120px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background-color: pink;
+      border-radius: 5px;
+      margin-bottom: 15px;
+
+      a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        transition: $transition2;
+        font-size: 16px;
+      }
+
+      a:hover {
+        transform: rotate(360deg);
+      }
+    }
+
+    .nav-item:nth-child(1) {
+      background-color: #666;
+    }
+
+    .nav-item:nth-child(2) {
+      background-color: #0cc;
+    }
+
+    .nav-item:nth-child(3) {
+      background-color: #c96;
+    }
+
+    .nav-item:nth-child(4) {
+      background-color: #63c;
+    }
+  }
+
+  /*侧面点击排行*/
+  .click-recommend-wrap {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 15px;
+
+    .click-title {
+      padding: 0 15px;
+      box-sizing: border-box;
+      border-left: 2px solid $theme-color1;
+      font-size: 16px;
+    }
+
+    /*排行列表*/
+    .recommend-list {
+      box-sizing: border-box;
+      margin-top: 5px;
+
+      .recommend-item {
+        padding: 10px 5px;
+        border-bottom: 1px solid $border-color2;
+
+        p {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          word-break: break-all;
+
+          a {
+            font-size: 14px;
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .recommend-item:last-child {
+        border: 0;
+      }
+    }
+  }
+
+  /*最新评论*/
+  .news-guest-book {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 15px;
+
+    .news-title {
+      padding: 0 15px;
+      box-sizing: border-box;
+      border-left: 2px solid $theme-color1;
+      font-size: 16px;
+    }
+
+    /*留言列表*/
+    .guest-book-list{
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      .guest-book-item {
+        overflow: hidden;
+        padding: 10px 0;
+        border-bottom: 1px solid $border-color2;
+
+        /*用户头像*/
+        .user-photo{
+          float: left;
+          width: 50px;
+          img{
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+          }
+        }
+
+        .comments-text-box {
+          float: left;
+          width: 225px;
+          margin-left: 5px;
+          /*用户名*/
+          .user-name {
+            font-size: 14px;
+            color: $font-color6;
+            font-weight: 600;
+          }
+
+          /*留言内容*/
+          .comments-text {
+            margin-top: 5px;
+            a{
+              color: $font-color5;
+              font-size: 12px;
+
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              word-break: break-all;
+            }
+          }
+
+          /*留言时间*/
+          .comments-time{
+            display: flex;
+            color: $font-color5;
+            font-size: 12px;
+            margin-top: 5px;
+
+            span{
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+
+      .guest-book-item:last-child{
+        border:0;
+      }
+    }
+  }
+}

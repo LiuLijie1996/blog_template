@@ -1,0 +1,39 @@
+@import "./commont.scss";
+@import "./articleList.scss";
+@import "./mainContentSide.scss";
+@import "./header.scss";
+@import "./footer.scss";
+
+.navBox{
+  width: 1200px;
+  margin: auto;
+}
+
+
+.main-content {
+  padding:1px 0 0 20px;
+  box-sizing: border-box;
+  .layui-timeline{
+    margin-top: 30px;
+    .layui-timeline-item{
+      padding-bottom: 30px;
+      img{
+        position: absolute;
+        transform: translateX(-43%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .layui-timeline-content {
+        padding-left: 40px;
+        .right-content{
+          padding: 10px;
+          border:1px solid $border-color1;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
