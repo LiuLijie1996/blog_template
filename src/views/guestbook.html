@@ -68,17 +68,162 @@
     <!--主要内容-->
     <div class="main-content">
         <!--评论框-->
-    </div>
+        <div class="commentBox">
+            <!--当前用户头像-->
+            <div class="userPhoto">
+                <img src="../asset/images/defaultPhoto.jpg" alt="">
+            </div>
 
-    <div id="test"></div>
-    <div id="div-emoji">
-        <p>
-            <input id="input" type="text">
-        </p>
-        <p>
-            <button id="send">发送</button>
-            <button id="btn">emojiBtn</button>
-        </p>
+            <!--输入框-->
+            <div class="comment-input">
+                <!--输入框-->
+                <div class="textarea" contenteditable placeholder="拖拽一个表情过来试试"></div>
+
+                <!--按钮-->
+                <div class="comments-textarea-info">
+                    <div class="expression-box emojiBtn">
+                        <i class="layui-icon layui-icon-face-smile"></i>
+                        <span>表情</span>
+                    </div>
+                    <div class="btn-box">
+                        <!--<button class="login-btn">点击登录</button>-->
+                        <button class="layui-btn layui-btn-normal gray send" disabled>发布</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--评论列表-->
+        <div class="comments-list-box">
+            <!--选择评论类型-->
+            <div class="select-comments-type">
+                <button class="layui-btn layui-btn-sm layui-btn-danger">最热评论</button>
+                <button class="layui-btn layui-btn-sm layui-btn-warm">最新评论</button>
+            </div>
+
+            <!--评论列表-->
+            <ul class="comments-list">
+                <!--评论-->
+                <li class="comments-text-wrap">
+                    <!--用户头像-->
+                    <div class="user-photo">
+                        <img src="../asset/images/defaultPhoto.jpg" alt="">
+                    </div>
+
+                    <!--评论内容-->
+                    <div class="comments-text">
+                        <!--作者-->
+                        <div class="comments-author">
+                            小明<span class="color-red">回复</span>小明
+                        </div>
+                        <!--内容-->
+                        <div class="text">
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            不符合的站点，不会通过哦！
+                            <img src="../asset/images/defaultPhoto.jpg" alt="">
+                        </div>
+                        <!--评论时间-->
+                        <div class="comments-info">
+                            <p class="time">
+                                <i class="layui-icon layui-icon-time"></i>
+                                <span>2020年8月3日</span>
+                            </p>
+                            <p class="praise">
+                                <i class="layui-icon layui-icon-praise"></i>
+                                <span>0</span>
+                            </p>
+                            <p class="reply-btn">
+                                <i class="layui-icon layui-icon-reply-fill"></i>
+                                <span>回复</span>
+                            </p>
+                        </div>
+
+                        <!--回复框-->
+                        <div class="reply-box"></div>
+
+                        <!--二级评论-->
+                        <ul class="comments-list">
+                            <!--评论-->
+                            <li class="comments-text-wrap">
+                                <!--用户头像-->
+                                <div class="user-photo">
+                                    <img src="../asset/images/defaultPhoto.jpg" alt="">
+                                </div>
+
+                                <!--评论内容-->
+                                <div class="comments-text">
+                                    <!--作者-->
+                                    <div class="comments-author">
+                                        小明<span class="color-red">回复</span>小明
+                                    </div>
+                                    <!--内容-->
+                                    <div class="text">
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        不符合的站点，不会通过哦！
+                                        <img src="../asset/images/defaultPhoto.jpg" alt="">
+                                    </div>
+                                    <!--评论时间-->
+                                    <div class="comments-info">
+                                        <p class="time">
+                                            <i class="layui-icon layui-icon-time"></i>
+                                            <span>2020年8月3日</span>
+                                        </p>
+                                        <p class="praise">
+                                            <i class="layui-icon layui-icon-praise"></i>
+                                            <span>0</span>
+                                        </p>
+                                        <p class="reply-btn">
+                                            <i class="layui-icon layui-icon-reply-fill"></i>
+                                            <span>回复</span>
+                                        </p>
+                                    </div>
+
+                                    <!--回复框-->
+                                    <div class="reply-box"></div>
+
+                                    <!--二级评论-->
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <!--分页-->
+            <div class="paging">
+                <div id="paging"></div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -89,4 +234,12 @@
 </div>
 </body>
 
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="/emoji_jQuery/dist/emoji_jQuery.min.js"></script>
+<script>
+    let page = {
+        Lemoji: $.Lemoji,
+        emojiParse: $.emojiParse
+    }
+</script>
 </html>
