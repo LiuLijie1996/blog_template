@@ -4,8 +4,17 @@ import myRequest from "./util/myRequest";
 
 const observer = new Observer();
 
-layui.use("element", function () {
-
+layui.use(['laypage', 'layer'], function () {
+    let laypage = layui.laypage;
+    //完整功能
+    laypage.render({
+        elem: 'paging'
+        , count: 100
+        , layout: ['count', 'prev', 'page', 'next', 'skip']
+        , jump: function (obj) {
+            console.log(obj)
+        }
+    });
 });
 
 //发表评论时需要的字段
@@ -137,10 +146,7 @@ export class GuestBook {
             $(sendItem).on("click", function () {
                 let childComments: HTMLElement = $(".child-comments")[i];
                 let childCommentsList: HTMLElement = $(".child-comments .comments-list")[i];
-                if (i - 1 >= 0) {
-                    childComments = $(".child-comments")[i - 1];
-                    childCommentsList = $(".child-comments .comments-list")[i - 1];
-                }
+
                 //获取文本框内容
                 // @ts-ignore
                 let textContent = page.emojiParse({
@@ -187,7 +193,7 @@ export class GuestBook {
                             content: _this.commentData.content,
                             time: "2020年01月01日",
                             praiseNum: 123,
-                            preComment:{
+                            preComment: {
                                 id: "789",
                                 photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
                                 userName: "小美",
@@ -197,6 +203,8 @@ export class GuestBook {
                             }
                         }));
                     } else {
+                        //如果为空，说明下面没有一条评论，增加一条评论
+
                         $(childComments).append(`<ul class="comments-list">
                             ${createCommentItem({
                             id: "456",
@@ -205,7 +213,7 @@ export class GuestBook {
                             content: _this.commentData.content,
                             time: "2020年02月02日",
                             praiseNum: 456,
-                            preComment:{
+                            preComment: {
                                 id: "789",
                                 photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
                                 userName: "小美",
@@ -279,6 +287,121 @@ function setSendBtnStatus(ele: HTMLElement, html: string) {
 }
 
 
+// //生成评论
+// function createCommentItem(data: CommentItemData) {
+//     let liItem = "";
+//     let author = "";
+//
+//     //头像组件
+//     let userPhoto = `<div class="user-photo">
+//         <img src="${data.photo}" alt="">
+//     </div>`;
+//
+//     // 内容
+//     // 评论时间
+//     // 回复框
+//     let contentBox = `
+//         <!--内容-->
+//         <div class="text">${data.content}</div>
+//         <!--评论时间-->
+//         <div class="comments-info">
+//             <p class="time">
+//                 <i class="layui-icon layui-icon-time"></i>
+//                 <span>${data.time}</span>
+//             </p>
+//             <p class="praise">
+//                 <i class="layui-icon layui-icon-praise"></i>
+//                 <span>${data.praiseNum}</span>
+//             </p>
+//             <p class="reply-btn" data-userId="2">
+//                 <i class="layui-icon layui-icon-reply-fill"></i>
+//                 <span>回复</span>
+//             </p>
+//         </div>
+//         <!--回复框-->
+//         <div class="reply-box">
+//             <div class="commentBox">
+//                 <!--输入框-->
+//                 <div class="comment-input">
+//                     <!--输入框-->
+//                     <div class="textarea" contenteditable placeholder="拖拽一个表情过来试试"></div>
+//
+//                     <!--按钮-->
+//                     <div class="comments-textarea-info">
+//                         <div class="expression-box emojiBtn">
+//                             <i class="layui-icon layui-icon-face-smile"></i>
+//                             <span>表情</span>
+//                         </div>
+//                         <div class="btn-box">
+//                             <!--<button class="login-btn">点击登录</button>-->
+//                             <button class="layui-btn layui-btn-normal gray send" disabled>发布</button>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//         `;
+//
+//     //判断是否有上一级评论
+//     if (data.preComment) {
+//         author = `<div class="comments-author">
+//             ${data.userName}<span class="color-red">回复</span>${data.preComment.userName}
+//         </div>`;
+//
+//         liItem = `<li class="comments-text-wrap">
+//             <!--用户头像-->
+//             ${userPhoto}
+//
+//             <!--评论内容-->
+//             <div class="comments-text">
+//                 <!--作者-->
+//                 <div class="comments-author">${author}</div>
+//
+//                 <!--内容-->
+//                 <!--评论时间-->
+//                 <!--回复框-->
+//                 ${contentBox}
+//
+//                 <!--子集评论-->
+//                 <div class="child-comments">${data.preComment.preComment ? createCommentItem(data.preComment) : ''}</div>
+//             </div>
+//         </li>`;
+//     } else {
+//         author = `<div class="comments-author">
+//             <span class="color-red">${data.userName}</span>
+//         </div>`;
+//
+//         liItem = `<li class="comments-text-wrap">
+//             <!--用户头像-->
+//             ${userPhoto}
+//
+//             <!--评论内容-->
+//             <div class="comments-text">
+//                 <!--作者-->
+//                 <div class="comments-author">${author}</div>
+//
+//                 <!--内容-->
+//                 <!--评论时间-->
+//                 <!--回复框-->
+//                 ${contentBox}
+//
+//                 <!--子集评论-->
+//                 <div class="child-comments"></div>
+//             </div>
+//         </li>`;
+//     }
+//
+//     return liItem;
+// }
+
+
+
+
+
+
+
+
+
 //生成评论
 function createCommentItem(data: CommentItemData) {
     let liItem = "";
@@ -334,57 +457,191 @@ function createCommentItem(data: CommentItemData) {
         </div>
         `;
 
-    //判断是否还有上级评论
-    if (data.preComment) {
-        author = `<div class="comments-author">
-            ${data.userName}<span class="color-red">回复</span>${data.preComment.userName}
-        </div>`;
+    //作者
+    author = `<div class="comments-author">
+        <span class="color-red">${data.userName}</span>
+    </div>`;
 
-        liItem = `<li class="comments-text-wrap">
-            <!--用户头像-->
-            ${userPhoto}
-    
-            <!--评论内容-->
-            <div class="comments-text">
-                <!--作者-->
-                <div class="comments-author">${author}</div>
-                
-                <!--内容-->
-                <!--评论时间-->
-                <!--回复框-->
-                ${contentBox}
-    
-                <!--子集评论-->
-                <div class="child-comments">${data.preComment.preComment ? createCommentItem(data.preComment) : ''}</div>
-            </div>
-        </li>`;
-    } else {
-        author = `<div class="comments-author">
-            <span class="color-red">${data.userName}</span>
-        </div>`;
+    liItem = `<li class="comments-text-wrap">
+        <!--用户头像-->
+        ${userPhoto}
 
-        liItem = `<li class="comments-text-wrap">
-            <!--用户头像-->
-            ${userPhoto}
-    
-            <!--评论内容-->
-            <div class="comments-text">
-                <!--作者-->
-                <div class="comments-author">${author}</div>
-                
-                <!--内容-->
-                <!--评论时间-->
-                <!--回复框-->
-                ${contentBox}
-    
-                <!--子集评论-->
-                <div class="child-comments"></div>
-            </div>
-        </li>`;
-    }
+        <!--评论内容-->
+        <div class="comments-text">
+            <!--作者-->
+            <div class="comments-author">${author}</div>
+            
+            <!--内容-->
+            <!--评论时间-->
+            <!--回复框-->
+            ${contentBox}
+
+            <!--子集评论-->
+            <div class="child-comments"></div>
+        </div>
+    </li>`;
 
     return liItem;
 }
+
+
+
+/*-----------测试------------*/
+let commentList = [
+    {
+        id: "123",
+        photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+        userName: "小刚",
+        content: "的说法谁付水电费；乐疯了外国片【 ",
+        time: "2020年02月02日",
+        praiseNum: 1,
+        preComment: {
+            id: "234",
+            photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+            userName: "小美",
+            content: "分配阀【饿哦我【头尾【个",
+            time: "2020年03月03日",
+            praiseNum: 2,
+            preComment: {
+                id: "234",
+                photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+                userName: "小美",
+                content: "吧，。吗v奋斗过来人说感觉",
+                time: "2020年03月03日",
+                praiseNum: 2,
+                preComment: {
+                    id: "234",
+                    photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+                    userName: "小美",
+                    content: "路径的路附近水立方",
+                    time: "2020年03月03日",
+                    praiseNum: 2,
+                    preComment: {
+                        id: "234",
+                        photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+                        userName: "小美",
+                        content: "再擦发生；电费卡彭公开",
+                        time: "2020年03月03日",
+                        praiseNum: 2,
+                    }
+                }
+            }
+        }
+    },
+    {
+        id: "123",
+        photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+        userName: "小刚",
+        content: "路径的路附近水立方",
+        time: "2020年02月02日",
+        praiseNum: 1,
+        preComment: {
+            id: "234",
+            photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+            userName: "小美",
+            content: "法国片惹我公平惹我公平荣",
+            time: "2020年03月03日",
+            praiseNum: 2,
+            preComment: {
+                id: "234",
+                photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+                userName: "小美",
+                content: "南方的公司发的果肉凭感觉热",
+                time: "2020年03月03日",
+                praiseNum: 2,
+                preComment: {
+                    id: "234",
+                    photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+                    userName: "小美",
+                    content: "的风格和体会人生的发生的",
+                    time: "2020年03月03日",
+                    praiseNum: 2,
+                    preComment: {
+                        id: "234",
+                        photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+                        userName: "小美",
+                        content: "的烦恼多难过法国",
+                        time: "2020年03月03日",
+                        praiseNum: 2,
+                    }
+                }
+            }
+        }
+    },
+    {
+        id: "123",
+        photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+        userName: "支付",
+        content: "的呢口碑平日配股怕热i个如歌",
+        time: "2020年02月02日",
+        praiseNum: 1,
+        preComment: {
+            id: "234",
+            photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+            userName: "的烦恼",
+            content: "电脑的本地人风景",
+            time: "2020年03月03日",
+            praiseNum: 5642,
+            preComment: {
+                id: "234",
+                photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+                userName: "阿三",
+                content: "的；胜多负少老师；看",
+                time: "2020年03月03日",
+                praiseNum: 2,
+                preComment: {
+                    id: "234",
+                    photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+                    userName: "想；",
+                    content: "分；发电量看鬼片人品",
+                    time: "2020年03月03日",
+                    praiseNum: 2,
+                    preComment: {
+                        id: "234",
+                        photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+                        userName: "西欧片",
+                        content: "发东三省的泼水节分平均高烹饪",
+                        time: "2020年03月03日",
+                        praiseNum: 2,
+                    }
+                }
+            }
+        }
+    },
+    {
+        id: "313",
+        photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+        userName: "小刚",
+        content: "威锋网【法人胃口",
+        time: "2020年02月02日",
+        praiseNum: 23,
+        preComment: {
+            id: "51",
+            photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+            userName: "小美",
+            content: "额赫尔【各科",
+            time: "2020年03月03日",
+            praiseNum: 2,
+            preComment: {
+                id: "2354",
+                photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1478932665,3628442590&fm=26&gp=0.jpg",
+                userName: "水库路",
+                content: "范围【发给哦我国覅吗",
+                time: "2020年03月03日",
+                praiseNum: 54,
+            }
+        }
+    },
+];
+
+$(".child-comments").html(`<ul class="comments-list"></ul>`);
+commentList.forEach((item: CommentItemData, i: number) => {
+    let ulCommentsList = $(".child-comments ul.comments-list");
+    /*添加一级评论*/
+    ulCommentsList.append(createCommentItem(item));
+});
+/*----------END-----------*/
+
 
 
 new GuestBook();
