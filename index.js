@@ -26,7 +26,6 @@ app.listen(8080, function () {
     console.log('server is running');
 });
 
-
 // 监听前端发来的请求
 app.all('*', function (req, res) {
     let options = {
