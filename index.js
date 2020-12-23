@@ -16,7 +16,7 @@ app.use(middleware(compiler));//使用中间件, 将编译器放入middleware中
 
 
 //解析前端发送的post请求
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());//如果前端通过axios发送的数据，这段必须写
 
 // 开放静态目录
@@ -37,7 +37,7 @@ app.all('*', function (req, res) {
         },
     };
 
-    axios.post(options.url, req.body).then(result => {
+    axios(options).then(result => {
         res.send(result.data);
     }).catch(err => {
         res.send({

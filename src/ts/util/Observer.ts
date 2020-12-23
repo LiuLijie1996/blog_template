@@ -6,7 +6,7 @@ interface EventItem {
     [key: string]: Func[]
 }
 
-export default class Observer {
+class Observer {
     items: EventItem;
 
     constructor() {
@@ -48,3 +48,4 @@ export default class Observer {
         this.items[name].splice(index, 1);
     }
 }
+export default new Observer();
