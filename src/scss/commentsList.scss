@@ -1,0 +1,84 @@
+//评论列表
+.comments-list {
+  width: 100%;
+  margin-top: 20px;
+
+  li.comments-item {
+    width: 100%;
+
+    .comments-text-wrap {
+      width: 100%;
+      padding: 10px 0;
+      overflow: hidden;
+      border-top: 1px solid #ccc;
+
+      /*用户头像*/
+      .user-img {
+        float: left;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      //评论详情
+      .comments-text-box {
+        width: 90%;
+        float: left;
+        margin-left: 20px;
+
+        /*作者*/
+        .comments-author {
+          font-size: 14px;
+          color: #d32;
+          font-weight: 600;
+        }
+
+        /*评论内容*/
+        .text {
+          padding: 5px 0px;
+
+          img {
+            max-width: 20px;
+          }
+        }
+
+        /*时间*/
+        .info {
+          font-size: 14px;
+          color: #333;
+
+          a {
+            margin-left: 5px;
+          }
+
+          .layui-icon {
+            position: relative;
+            top: 2px;
+            margin-left: 5px;
+          }
+        }
+
+        /*评论框*/
+        .comment-wrap-box {
+          width: 50%;
+          margin-top: 10px;
+
+          .comment-input {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+
+    /*子评论*/
+    .cildren {
+      margin-left: 50px;
+    }
+  }
+}

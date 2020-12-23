@@ -14,7 +14,6 @@ const compiler = webpack(config);//将配置传入webpack中,返回编译器
 app.use(middleware(compiler));//使用中间件, 将编译器放入middleware中进行解析
 /*-------END--------*/
 
-
 //解析前端发送的post请求
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());//如果前端通过axios发送的数据，这段必须写

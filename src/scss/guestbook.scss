@@ -3,23 +3,28 @@
 @import "./mainContentSide.scss";
 @import "./header.scss";
 @import "./footer.scss";
+@import "./commentInput.scss";//评论输入框
+@import "./commentsList.scss";//评论列表
+@import "./mainContentSide.scss";//右侧导航
 
 .emoji_container {
   left: 100px !important;
 }
 
+//面包屑导航
 .navBox {
   width: 1200px;
   margin: auto;
 }
 
-
 .main-content {
+  position: relative;
   margin-top: 20px !important;
   box-sizing: border-box;
 
   /*评论框*/
   .commentBox {
+    width: 870px;
     display: flex;
     padding: 10px;
     background-color: #fff;
@@ -27,6 +32,7 @@
     //用户头像
     .userPhoto {
       width: 50px;
+      margin-right: 10px;
 
       img {
         width: 50px;
@@ -35,181 +41,55 @@
       }
     }
 
-    //输入框
-    .comment-input:after {
-      content: "";
-      position: absolute;
-      bottom: 39px;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background-color: #ccc;
-    }
-
-    .comment-input {
-      position: relative;
-      width: 1120px;
-      height: 200px;
-      margin-left: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-
-      .textarea {
-        width: 100%;
-        height: 160px;
-        border: none;
-        resize: none;
-        outline: none;
-        overflow: auto;
-      }
-
-      .textarea:empty:before {
-        content: '拖拽一个表情过来试试~~~';
-        color: gray;
-        font-size: 20px;
-      }
-
-      /*.textarea:focus:before{
-        content:none;
-      }*/
-
-      .comments-textarea-info {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        justify-content: space-between;
-        height: 40px;
-        line-height: 40px;
-        box-sizing: border-box;
-        color: $font-color2;
-        overflow: hidden;
-
-        .expression-box {
-          padding-left: 10px;
-          cursor: pointer;
-
-          i {
-            color: $font-color2;
-          }
-        }
-
-        .login-btn {
-          border: none;
-          color: $font-color2;
-          background-color: rgba(0, 0, 0, 0);
-        }
-
-        .layui-btn-normal {
-          height: 40px;
-          line-height: 40px;
-          border-radius: 0;
-        }
-
-        .layui-btn-normal.gray {
-          background-color: $background-color2;
-        }
-      }
+    .comment-wrap-box {
+      width: 90%;
     }
   }
 
   //评论列表
-  .comments-list-box{
+  .comments-list-box {
+    width: 870px;
     padding: 10px;
     margin-top: 20px;
     background-color: #fff;
     /*选择评论类型*/
-    .select-comments-type{
-      text-align: right;
-    }
+    .select-comments-type {
+      display: flex;
+      justify-content: space-between;
 
-    //评论列表
-    .comments-list{
-      width: 100%;
-      margin-top: 20px;
-
-      li.comments-text-wrap {
-        width: 100%;
+      .left {
         display: flex;
-        padding: 10px 0;
-        border-top: 1px solid #ccc;
-        //用户头像
-        .user-photo {
-          width: 50px;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, .04);
+        border: 1px solid #ccc;
+        padding: 0 5px 0 5px;
+        border-radius: 5px;
 
-          img {
-            width: 50px;
-            height: 50px;
-            border-radius: 5px;
-          }
-        }
-
-        /*评论内容*/
-        .comments-text {
-          width: 100%;
-          position: relative;
-          margin-left: 10px;
-
-          /*作者*/
-          .comments-author {
-            .color-red {
-              margin: 0 5px;
-            }
-          }
-
-          .text {
-            margin-top: 5px;
-
-            img {
-              width: 25px;
-              height: 25px;
-            }
-          }
-
-          /*评论时间*/
-          .comments-info {
-            display: flex;
-            align-items: center;
-            margin-top: 5px;
-            color: $font-color8;
-            height: 20px;
-
-            p {
-              display: flex;
-              align-items: center;
-              margin-right: 10px;
-              height: 20px;
-
-              i {
-                margin-right: 5px;
-              }
-            }
-            .reply-btn{
-              cursor: pointer;
-            }
-          }
-
-          /*回复框*/
-          .reply-box{
-            display: none;
-            height: 242px;
-            .commentBox{
-              position: absolute;
-              left: 0;
-              right: 0;
-              height: 242px;
-            }
-          }
+        .num {
+          color: red;
+          margin-right: 5px;
         }
       }
     }
 
     //分页
-    .paging{
-      text-align: center;
+    .paging {
+      margin-top: 10px;
+      text-align: left;
+    }
+  }
+
+  /*右侧导航*/
+  .right-nav{
+    position: absolute;
+    top:0;
+    right: 0;
+
+    .main-content-side{
+      .search-wrap{
+        margin: 0;
+      }
     }
   }
 }
-

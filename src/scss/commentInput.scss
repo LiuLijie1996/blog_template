@@ -1,0 +1,73 @@
+/*评论输入框*/
+.comment-input:after {
+  content: "";
+  position: absolute;
+  bottom: 39px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.comment-input {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  .textarea {
+    width: 100%;
+    height: 160px;
+    border: none;
+    resize: none;
+    outline: none;
+    overflow: auto;
+  }
+
+  .textarea:empty:before {
+    content: '拖拽一个表情过来试试~~~';
+    color: gray;
+    font-size: 20px;
+  }
+
+  .comments-textarea-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    color: $font-color2;
+    overflow: hidden;
+
+    .expression-box {
+      padding-left: 10px;
+      cursor: pointer;
+
+      i {
+        color: $font-color2;
+      }
+    }
+
+    .login-btn {
+      border: none;
+      color: $font-color2;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    .layui-btn-normal {
+      height: 40px;
+      line-height: 40px;
+      border-radius: 0;
+    }
+
+    .layui-btn-normal.gray {
+      background-color: $background-color2;
+    }
+  }
+}

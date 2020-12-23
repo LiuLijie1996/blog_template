@@ -75,19 +75,21 @@
             </div>
 
             <!--输入框-->
-            <div class="comment-input">
-                <!--输入框-->
-                <div class="textarea" contenteditable placeholder="拖拽一个表情过来试试"></div>
+            <div class="comment-wrap-box">
+                <div class="comment-input">
+                    <!--输入框-->
+                    <div class="textarea" contenteditable placeholder="拖拽一个表情过来试试"></div>
 
-                <!--按钮-->
-                <div class="comments-textarea-info">
-                    <div class="expression-box emojiBtn">
-                        <i class="layui-icon layui-icon-face-smile"></i>
-                        <span>表情</span>
-                    </div>
-                    <div class="btn-box">
-                        <!--<button class="login-btn">点击登录</button>-->
-                        <button class="layui-btn layui-btn-normal gray send" disabled>发布</button>
+                    <!--按钮-->
+                    <div class="comments-textarea-info">
+                        <div class="expression-box emojiBtn">
+                            <i class="layui-icon layui-icon-face-smile"></i>
+                            <span>表情</span>
+                        </div>
+                        <div class="btn-box">
+                            <!--<button class="login-btn">点击登录</button>-->
+                            <button class="layui-btn layui-btn-normal gray send" disabled>发布</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -97,52 +99,47 @@
         <div class="comments-list-box">
             <!--选择评论类型-->
             <div class="select-comments-type">
-                <button class="layui-btn layui-btn-sm layui-btn-danger">最热评论</button>
-                <button class="layui-btn layui-btn-sm layui-btn-warm">最新评论</button>
+                <div class="left">
+                    <span class="num">100</span>条评论
+                </div>
+                <div class="right">
+                    <button class="layui-btn layui-btn-sm layui-btn-danger">最热评论</button>
+                    <button class="layui-btn layui-btn-sm layui-btn-warm">最新评论</button>
+                </div>
             </div>
 
             <div class="child-comments">
                 <!--评论列表-->
                 <ul class="comments-list">
-                    <!--评论-->
-                    <li class="comments-text-wrap">
-                        <!--用户头像-->
-                        <div class="user-photo">
-                            <img src="../asset/images/defaultPhoto.jpg" alt="">
-                        </div>
+                    <!--评论项-->
+                    <li class="comments-item">
+                        <!--评论-->
+                        <div class="comments-text-wrap">
+                            <!--用户头像-->
+                            <div class="user-img">
+                                <img src="../asset/images/defaultPhoto.jpg">
+                            </div>
 
-                        <!--评论内容-->
-                        <div class="comments-text">
-                            <!--作者-->
-                            <div class="comments-author">
-                                小明<span class="color-red">回复</span>小明
-                            </div>
-                            <!--内容-->
-                            <div class="text">
-                                不符合的站点，不会通过哦！
-                                不符合的站点，不会通过哦！
-                                不符合的站点，不会通过哦！
-                                <img src="../asset/images/defaultPhoto.jpg" alt="">
-                            </div>
-                            <!--评论时间-->
-                            <div class="comments-info">
-                                <p class="time">
-                                    <i class="layui-icon layui-icon-time"></i>
-                                    <span>2020年8月3日</span>
-                                </p>
-                                <p class="praise">
+                            <!--评论详情-->
+                            <div class="comments-text-box">
+                                <!--作者名称-->
+                                <h3 class="comments-author">小明博客</h3>
+
+                                <!--评论内容-->
+                                <div class="text">
+                                    有需要做网站的朋友<img src="../asset/images/defaultPhoto.jpg">可以找我
+                                </div>
+
+                                <!--时间-->
+                                <div class="info">
+                                    <span class="me">2020年9月16日</span>
+                                    <a href="javascript:;">回复</a>
                                     <i class="layui-icon layui-icon-praise"></i>
-                                    <span>0</span>
-                                </p>
-                                <p class="reply-btn" data-userId="1">
-                                    <i class="layui-icon layui-icon-reply-fill"></i>
-                                    <span>回复</span>
-                                </p>
-                            </div>
+                                    <span class="like-num">123</span>
+                                </div>
 
-                            <!--回复框-->
-                            <div class="reply-box">
-                                <div class="commentBox">
+                                <!--评论框-->
+                                <div class="comment-wrap-box">
                                     <!--输入框-->
                                     <div class="comment-input">
                                         <!--输入框-->
@@ -156,96 +153,72 @@
                                             </div>
                                             <div class="btn-box">
                                                 <!--<button class="login-btn">点击登录</button>-->
-                                                <button class="layui-btn layui-btn-normal gray send" disabled>发布</button>
+                                                <button class="layui-btn layui-btn-normal gray send" disabled>发布
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!--子集评论-->
-                            <div class="child-comments">
-                                <!--<ul class="comments-list">
-                                    &lt;!&ndash;评论&ndash;&gt;
-                                    <li class="comments-text-wrap">
-                                        &lt;!&ndash;用户头像&ndash;&gt;
-                                        <div class="user-photo">
-                                            <img src="../asset/images/defaultPhoto.jpg" alt="">
+                        <!--子评论-->
+                        <ul class="cildren">
+                            <li class="comments-item">
+                                <!--评论-->
+                                <div class="comments-text-wrap">
+                                    <!--用户头像-->
+                                    <div class="user-img">
+                                        <img src="../asset/images/defaultPhoto.jpg">
+                                    </div>
+
+                                    <!--评论详情-->
+                                    <div class="comments-text-box">
+                                        <!--作者名称-->
+                                        <h3 class="comments-author">小明博客</h3>
+
+                                        <!--评论内容-->
+                                        <div class="text">
+                                            有需要做网站的朋友<img src="../asset/images/defaultPhoto.jpg">可以找我
                                         </div>
 
-                                        &lt;!&ndash;评论内容&ndash;&gt;
-                                        <div class="comments-text">
-                                            &lt;!&ndash;作者&ndash;&gt;
-                                            <div class="comments-author">
-                                                小明<span class="color-red">回复</span>小明
-                                            </div>
-                                            &lt;!&ndash;内容&ndash;&gt;
-                                            <div class="text">
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                不符合的站点，不会通过哦！
-                                                <img src="../asset/images/defaultPhoto.jpg" alt="">
-                                            </div>
-                                            &lt;!&ndash;评论时间&ndash;&gt;
-                                            <div class="comments-info">
-                                                <p class="time">
-                                                    <i class="layui-icon layui-icon-time"></i>
-                                                    <span>2020年8月3日</span>
-                                                </p>
-                                                <p class="praise">
-                                                    <i class="layui-icon layui-icon-praise"></i>
-                                                    <span>0</span>
-                                                </p>
-                                                <p class="reply-btn" data-userId="2">
-                                                    <i class="layui-icon layui-icon-reply-fill"></i>
-                                                    <span>回复</span>
-                                                </p>
-                                            </div>
+                                        <!--时间-->
+                                        <div class="info">
+                                            <span class="me">2020年9月16日</span>
+                                            <a href="javascript:;">回复</a>
+                                            <i class="layui-icon layui-icon-praise"></i>
+                                            <span class="like-num">123</span>
+                                        </div>
 
-                                            &lt;!&ndash;回复框&ndash;&gt;
-                                            <div class="reply-box">
-                                                <div class="commentBox">
-                                                    &lt;!&ndash;输入框&ndash;&gt;
-                                                    <div class="comment-input">
-                                                        &lt;!&ndash;输入框&ndash;&gt;
-                                                        <div class="textarea" contenteditable placeholder="拖拽一个表情过来试试"></div>
+                                        <!--评论框-->
+                                        <div class="comment-wrap-box">
+                                            <!--输入框-->
+                                            <div class="comment-input">
+                                                <!--输入框-->
+                                                <div class="textarea" contenteditable placeholder="拖拽一个表情过来试试"></div>
 
-                                                        &lt;!&ndash;按钮&ndash;&gt;
-                                                        <div class="comments-textarea-info">
-                                                            <div class="expression-box emojiBtn">
-                                                                <i class="layui-icon layui-icon-face-smile"></i>
-                                                                <span>表情</span>
-                                                            </div>
-                                                            <div class="btn-box">
-                                                                &lt;!&ndash;<button class="login-btn">点击登录</button>&ndash;&gt;
-                                                                <button class="layui-btn layui-btn-normal gray send" disabled>发布</button>
-                                                            </div>
-                                                        </div>
+                                                <!--按钮-->
+                                                <div class="comments-textarea-info">
+                                                    <div class="expression-box emojiBtn">
+                                                        <i class="layui-icon layui-icon-face-smile"></i>
+                                                        <span>表情</span>
+                                                    </div>
+                                                    <div class="btn-box">
+                                                        <!--<button class="login-btn">点击登录</button>-->
+                                                        <button class="layui-btn layui-btn-normal gray send" disabled>
+                                                            发布
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            &lt;!&ndash;子集评论&ndash;&gt;
-                                            <div class="child-comments"></div>
                                         </div>
-                                    </li>
-                                </ul>-->
-                            </div>
-                        </div>
+                                    </div>
+                                </div>
+
+                                <!--子评论-->
+                                <!--<ui class="cildren">...</ui>-->
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -253,6 +226,154 @@
             <!--分页-->
             <div class="paging">
                 <div id="paging"></div>
+            </div>
+        </div>
+
+        <!--页面侧面-->
+        <div class="right-nav">
+            <div class="main-content-side">
+                <!--侧面搜索框-->
+                <div class="search-wrap">
+                    <div class="input-box">
+                        <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                        <i class="layui-icon layui-icon-search"></i>
+                    </div>
+                </div>
+
+                <!--侧面导航-->
+                <div class="side-nav">
+                    <div class="nav-item">
+                        <a href="javascript:;">SEO优化</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="javascript:;">个人日记</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="javascript:;">关于我</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="javascript:;">留言板</a>
+                    </div>
+                </div>
+
+                <!--点击排行-->
+                <div class="click-recommend-wrap">
+                    <h3 class="click-title">点击排行</h3>
+                    <!--排行列表-->
+                    <div class="recommend-list">
+                        <div class="recommend-item">
+                            <p>
+                                <span class="layui-badge">01</span>
+                                <a href="javascript:;">如何建立个人博客如何建立个人博客如何建立个人博客如何建立个人博客</a>
+                            </p>
+                        </div>
+                        <div class="recommend-item">
+                            <p>
+                                <span class="layui-badge layui-bg-blue">02</span>
+                                <a href="javascript:;">如何建立个人博客</a>
+                            </p>
+                        </div>
+                        <div class="recommend-item">
+                            <p>
+                                <span class="layui-badge layui-bg-orange">03</span>
+                                <a href="javascript:;">如何建立个人博客</a>
+                            </p>
+                        </div>
+                        <div class="recommend-item">
+                            <p>
+                                <span class="layui-badge layui-bg-gray">04</span>
+                                <a href="javascript:;">如何建立个人博客</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--最新评论-->
+                <div class="news-guest-book">
+                    <h3 class="news-title">最新留言</h3>
+
+                    <!--留言列表-->
+                    <div class="guest-book-list">
+                        <div class="guest-book-item">
+                            <!--用户头像-->
+                            <div class="user-photo">
+                                <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1224632201,1347234349&fm=26&gp=0.jpg"
+                                     alt="">
+                            </div>
+
+                            <!--留言-->
+                            <div class="comments-text-box">
+                                <!--用户名-->
+                                <h4 class="user-name">小明</h4>
+
+                                <!--留言内容-->
+                                <div class="comments-text">
+                                    <a href="javascript:;">
+                                        这博客挺好的呀，站长怎么不加我好友呢 这博客挺好的呀，站长怎么不加我好友呢站长怎么不加我好友呢
+                                    </a>
+                                </div>
+
+                                <!--留言时间-->
+                                <div class="comments-time">
+                                    <i class="layui-icon layui-icon-time"></i>
+                                    <span>2020年01月01日</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guest-book-item">
+                            <!--用户头像-->
+                            <div class="user-photo">
+                                <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1224632201,1347234349&fm=26&gp=0.jpg"
+                                     alt="">
+                            </div>
+
+                            <!--留言-->
+                            <div class="comments-text-box">
+                                <!--用户名-->
+                                <h4 class="user-name">小明</h4>
+
+                                <!--留言内容-->
+                                <div class="comments-text">
+                                    <a href="javascript:;">
+                                        这博客挺好的呀，站长怎么不加我好友呢 这博客挺好的呀，站长怎么不加我好友呢站长怎么不加我好友呢
+                                    </a>
+                                </div>
+
+                                <!--留言时间-->
+                                <div class="comments-time">
+                                    <i class="layui-icon layui-icon-time"></i>
+                                    <span>2020年01月01日</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="guest-book-item">
+                            <!--用户头像-->
+                            <div class="user-photo">
+                                <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1224632201,1347234349&fm=26&gp=0.jpg"
+                                     alt="">
+                            </div>
+
+                            <!--留言-->
+                            <div class="comments-text-box">
+                                <!--用户名-->
+                                <h4 class="user-name">小明</h4>
+
+                                <!--留言内容-->
+                                <div class="comments-text">
+                                    <a href="javascript:;">
+                                        这博客挺好的呀，站长怎么不加我好友呢 这博客挺好的呀，站长怎么不加我好友呢站长怎么不加我好友呢
+                                    </a>
+                                </div>
+
+                                <!--留言时间-->
+                                <div class="comments-time">
+                                    <i class="layui-icon layui-icon-time"></i>
+                                    <span>2020年01月01日</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
